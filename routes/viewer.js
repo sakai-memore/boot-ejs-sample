@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+/* GET viewer page */
 router.get('/', function(req, res, next) {
-  res.render('viewer', { title: 'BPMN Viewer' });
+  res.render('viewer', {
+    title: 'BPMN Viewer' ,
+    myuuid: res.locals.state.MYUUID
+  });
 
 });
 
